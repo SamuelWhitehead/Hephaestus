@@ -190,10 +190,48 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+.bgimage-1,
+.bgimage-2,
+.bgimage-3,
+.bgimage-4 {
+        position: relative;
+        opacity: 0.75;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+.bgimage-1 {
+    background-image: url("images/TotemPole.jpg");
+    min-height: 75%;
+}
+
+.bgimage-2 {
+    background-image: url("images/TotemPole.jpg");
+    min-height: 60%;
+}
+
+.bgimage-3 {
+    background-image: url("images/TotemPole.jpg");
+    min-height: 60%;
+}
+
+.bgimage-4 {
+    background-image: url("images/TotemPole.jpg");
+    min-height: 60%;
+}
+
 #content {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+}
+
+#about {
+    padding: 10px;
+    width: 100%;
+    height: 600px;
 }
 
 
