@@ -204,7 +204,7 @@ a.article, a.article:hover {
 
 .bgimage-1 {
     background-image: url("images/TotemPole.jpg");
-    min-height: 75%;
+    min-height: 60%;
 }
 
 .bgimage-2 {
@@ -226,6 +226,7 @@ a.article, a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    width: 100%;
 }
 
 #about {
