@@ -1,310 +1,522 @@
-<!DOCTYPE html>
-<html>
-<title>Samuel Whitehead</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
-}
+<!DOCTYPE HTML>
+<html lang="en">
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+<head>
+	<!-- Metadata -->
+	<meta charset="utf-8">
+	<meta name="description" content="My Website">
+	<meta name="keywords" content="Samuel Whitehead, Samuel, Whitehead">
+	<meta name="author" content="Samuel Whitehead">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-    background-image: '/images/BlackElkPeak.jpg';
-    min-height: 100%;
-}
+	<!-- Bootstrap MaxCDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-    background-image: url("/w3images/parallax2.jpg");
-    min-height: 400px;
-}
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
 
-/* Third image (Contact) */
-.bgimg-3 {
-    background-image: url("/images/classroom.jpg");
-    min-height: 400px;
-}
+	<!-- Page Title -->
+	<title>Samuel Whitehead</title>
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+	<!-- CSS -->
+	<!-- ************************* UPDATE LATER? ************************* -->
+	<style type="text/css">
+		body {
+			position: relative;
+		}
+		#header {
+			background-color: #a2a2a2;
+			color: #fff;
+			height: 156px;
+			line-height: 150px;
+			text-align: center;
+		}
+		.affix {
+			top: 0;
+			width: 100%;
+			z-index: 9999 !important;
+		}
+		.navbar {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			color: #777777;
+			background-color: #302c2c;
+		}
+		.affix~.container-fluid {
+			position: relative;
+			top: 50px;
+		}
+		.noPadding {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		.padding5 {
+			padding-left: 1%;
+		}
+		.indent {
+			text-indent: 35px;
+		}
+		.noBullets {
+			list-style-type: none;
+		}
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+		.bgimg-1,
+		.bgimg-2,
+		.bgimg-3,
+		.bgimg-4 {
+			position: relative;
+			opacity: 0.75;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.bgimg-1 {
+			background-image: url("ParallaxImages/StartUp Weekend Colorado Springs.png");
+			min-height: 75%;
+		}
+		.bgimg-2 {
+			background-image: url("ParallaxImages/2.jpg");
+			min-height: 60%;
+		}
+		.bgimg-3 {
+			background-image: url("ParallaxImages/books-768426_1280-1280x640.jpg");
+			min-height: 60%;
+		}
+		.bgimg-4 {
+			background-image: url("ParallaxImages/startups1.jpg");
+			min-height: 60%;
+		}
+		.caption {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			color: #000;
+		}
+		.caption span.border {
+			background-color: #111;
+			color: #fff;
+			padding: 18px;
+			font-size: 25px;
+			letter-spacing: 10px;
+		}
+		h3 {
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			font: 20px "Lato", sans-serif;
+			color: #111;
+		}
+		#about {
+			padding-top: 15px;
+			height: 600px;
+			padding: 0px;
+		}
+		#photos {
+			padding-top: 20px;
+			height: 1000px;
+			color: #fff;
+  }
+	</style>
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
-}
-</style>
-<body>
+  <!-- <script type="text/javascript">
+		if (screen.width <= 1350)
+		{
+			document.location = "mobile.html";
+		}
+</script>-->
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-  </div>
+</head>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-  </div>
-</div>
+<body data-spy="affix" data-target=".navbar" data-offset="50">
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
-  </div>
-</div>
+	<!-- Orginization name to start off the website -->
+	<div class="container-fluid" id="header">
 
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-    </div>
+		<img src="headerPhotos/logo.png" alt="logo" height="150" width="150" align="left">
 
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
-  </div>
-</div>
+		<img src="headerPhotos/logoText3.png" alt="logoText" height="150" width="550">
 
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Partners
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Projects Done
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
-  </div>
-</div>
+	</div>
 
-<!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
-  </div>
-</div>
+	<!--Navigation Bar-->
+	<nav class="navbar navbar-inverse navbar-static-top" data-spy="affix" data-offset-top="150" role="navigation">
 
-<!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+		<div>
 
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
-    </div>
+			<div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
-    </div>
+				<ul class="nav navbar-nav navbar-left">
 
-    <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
-    </div>
+						<li class="active">
+							<a href="index.html">Home</a>
+						</li>
+						<!-- Top of page (Set Active) -->
 
-    <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-  </div>
+						<li>
+							<a href="#about">About</a>
+						</li>
+						<!-- About  -->
 
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
+					</ul>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
+					<ul class="nav navbar-nav navbar-right" style="margin-right:5px;">
+						<li>
+							<a style="color:#ffc222; text-align:center;">ICENTREPRENEURS@MINES.SDSMT.EDU</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
+	<div id="about" class="container-fluid">
 
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>
-</div>
+		<div class="bgimg-1">
 
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
-  </div>
-</div>
+			<div class="caption">
 
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
-  </div>
-</div>
+				<span class="border">ABOUT US</span>
 
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
+			</div>
+		</div>
 
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <!-- Add Google Maps -->
-      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
-    </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
-      </div>
-      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
+		<div class="container-fluid" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
 
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<!-- Add Google Maps -->
-<script>
-function myMap()
-{
-  myCenter=new google.maps.LatLng(41.878114, -87.629798);
-  var mapOptions= {
-    center:myCenter,
-    zoom:12, scrollwheel: false, draggable: false,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+			<!-- WHY ICE WAS FORMED -->
+			<div class="col-sm-4">
+				<h3 style="text-align:center;">Why ICE was Formed?</h3>
 
-  var marker = new google.maps.Marker({
-    position: myCenter,
-  });
-  marker.setMap(map);
-}
+				<p class="padding5 indent" style="text-align:left;">
+					The Innovation Club for Entrepreneurs is a stepping stone for students who want to begin or continue learning
+					about entrepreneurship prior to and after participating in business plan competitions or starting their own businesses.
+					We are building a community of like-minded individuals who are driven to collaborate and start their own business eventually.
 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+				</p>
+			</div>
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
+			<!-- WHY ENTREPRENEURIAL EDUCATION MATTERS -->
+			<div class="col-sm-4">
+				<h3 style="text-align:center;">Why Entrepreneurial Education Matters</h3>
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+				<p class="padding5 indent" style="text-align:left;">
+					Entrepreneurs learn to think creatively, manage people/resources, and communicate with a wide variety of individuals.
+					These skills are also vital to any type of career in any field a person chooses. The ability to communicate with others
+					is especially important for engineers and scientists, who spend 65-75% of their time working with marketing teams and
+					giving presentations to their bosses.
+				</p>
+			</div>
+
+			<!-- OUR GOAL -->
+			<div class="col-sm-4">
+				<h3 style="text-align:center;">Our Mission</h3>
+
+				<p class="padding5 indent" style="text-align:left;">
+					Our vision is to foster creativity, ingenuity, and synergy in a supportive environment, to promote multidisciplinary
+					interaction with an emphasis in business; to develop well-rounded individuals, to network with professionals,
+					and to make a difference in the surrounding area.
+				</p>
+			</div>
+		</div>
+
+		<!-- ADVISORS -->
+
+		<div id="advisors" class="bgimg-3">
+
+			<div class="caption">
+
+				<span class="border">Advisors</span>
+
+			</div>
+
+		</div>
+
+		<div class="container-fluid" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: center;">
+
+			<div class="col-sm-6">
+				<h3 style="text-align:center;">
+					Joseph Wright
+				</h3>
+				<p class="padding5">
+					SDSM&T VP for Research-Economic Development Entrepreneur
+				</p>
+				<p class="padding5">
+					Joseph.Wright@sdsmt.edu
+				</p>
+			</div>
+
+			<div class="col-sm-6">
+				<h3 style="text-align:center;">
+					Dr. Daniel Dolan
+				</h3>
+				<p class="padding5">
+					SDSM&T ME Department Head & Professor
+				</p>
+				<p class="padding5">
+					Daniel.Dolan@sdsmt.edu
+				</p>
+			</div>
+
+		</div>
+
+		<!-- Officers -->
+
+		<div id="officers" class="bgimg-4">
+
+			<div class="caption">
+
+				<span class="border">Officers</span>
+
+			</div>
+
+		</div>
+
+		<div class="container-fluid" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: center;">
+
+			<div class="col-sm-3">
+				<!-- Insert image Here -->
+
+				<img style="border-radius:50%; vertical-align: middle; display: block; margin-left: auto; margin-right: auto;" align="middle"
+				 src="fluidImages/WilliamTrevillyanC.jpg" alt="William Trevillyan" class="img-responsive" width="225" height="225">
+				<h3 style="line-height:7px;">William</h3>
+				<h3 style="line-height:7px;">Trevillyan</h3>
+				<p>President</p>
+				<p>William.Trevillyan@mines.sdsmt.edu</p>
+				<p>(605) 323-8550</p>
+				<!--Insert Link to profile if possible-->
+
+			</div>
+			<div class="col-sm-3">
+				<!-- Insert image Here -->
+
+				<img style="border-radius:50%; vertical-align: middle; display: block; margin-left: auto; margin-right: auto;" src="fluidImages/SethSnyderC.jpg"
+				 alt="Seth Snyder" class="img-responsive" width="225" height="225">
+				<h3 style="line-height:7px;">Seth</h3>
+				<h3 style="line-height:7px;">Snyder</h3>
+				<p>Vice President</p>
+				<p>Seth.Snyder@mines.sdsmt.edu</p>
+				<p>(605) 222-4230</p>
+				<!--Insert Link to profile if possible-->
+
+			</div>
+			<div class="col-sm-3">
+				<!-- Insert image Here -->
+
+				<img style="border-radius:50%; vertical-align: middle; display: block; margin-left: auto; margin-right: auto;" src="fluidImages/JaceJohnsonC.jpg"
+				 alt="Jace Johnson" class="img-responsive" width="225" height="225">
+				<h3 style="line-height:7px;">Jace</h3>
+				<h3 style="line-height:7px;">Johnson</h3>
+				<p>Treasurer</p>
+				<p>Jace.Johnson@mines.sdsmt.edu</p>
+				<p>(218) 686-3025</p>
+				<!--Insert Link to profile if possible-->
+
+			</div>
+			<div class="col-sm-3">
+				<!-- Insert image Here -->
+
+				<img style="border-radius:50%; vertical-align: middle; display: block; margin-left: auto; margin-right: auto;" src="fluidImages/MorganVagtsC.jpg"
+				 alt="Morgan Vagts" class="img-responsive" width="225" height="225">
+				<h3 style="line-height:7px;">Morgan</h3>
+				<h3 style="line-height:7px;">Vagts</h3>
+				<p>Secretary</p>
+				<p>Morgan.Vagts@mines.sdsmt.edu</p>
+				<p>Unavailable</p>
+				<!--Insert Link to profile if possible-->
+
+			</div>
+
+		</div>
+
+
+		<div id="photos" class="container-fluid">
+
+			<div class="container">
+
+				<div id="photoCarousel" class="carousel slide" data-ride="carousel">
+
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+
+						<li data-target="#photoCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#photoCarousel" data-slide-to="1"></li>
+						<li data-target="#photoCarousel" data-slide-to="2"></li>
+						<li data-target="#photoCarousel" data-slide-to="3"></li>
+
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+
+						<div class="item active">
+
+							<img src="photoCarousel/1.jpg" alt="Photo 1" style="width:100%;">
+
+							<div class="carousel-caption">
+
+								<h2>Start-Up Weekend Sheridan:</h2>
+								<p>Group of SDSM&T ICE members working on customer validation,
+									their business model, and pitch over a 54 hour time period.
+									Matthew Phillips and Victor Hernandez won 1st place with a
+									recycled art company. Members: Haleh Barmaki, Jace Johnson,
+									Kyle Macmillan, Matthew Phillips, William Trevillyan, and
+									Victor Hernandez. Spring 2017 – Sheridan, WY.
+								</p>
+							</div>
+
+						</div>
+
+						<div class="item">
+
+							<img src="photoCarousel/2.jpg" alt="Photo 2" style="width:100%;">
+
+							<div class="carousel-caption">
+
+								<h2>Public Speaker – Aduth Timblo:</h2>
+								<p>Members of ICE and other SDSM&T students listen to
+									Aduth Timblo giving entrepreneurial, international
+									business, and life advice. Spring 2017 – SDSM&T Campus.
+								</p>
+							</div>
+						</div>
+
+						<div class="item">
+
+							<img src="photoCarousel/3.jpg" alt="Photo 3" style="width:100%;">
+
+							<div class="carousel-caption">
+
+								<h2>Start-Up Weekend Yankton: </h2>
+								<p>Group of SDSM&T ICE members working on customer validation,
+									their business model, and pitch over a 54 hour time period.
+									Their company, TableIT, manufactured and sold whiteboard desks.
+									Members: Samuel Whitehead and William Trevillyan. Spring 2016 –
+									Yankton, SD.
+								</p>
+							</div>
+						</div>
+
+						<div class="item">
+
+							<img src="photoCarousel/4.jpg" alt="Photo 4" style="width:100%;">
+
+							<div class="carousel-caption">
+
+								<h2>Public Speaker – Aduth Timblo:</h2>
+								<p>Thank you from the Innovation Club for Entrepreneurs</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#photoCarousel" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+
+					<a class="right carousel-control" href="#photoCarousel" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+						<span class="sr-only">Next</span>
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- EVENTS -->
+
+		<div id="events" class="bgimg-2">
+
+			<div class="caption">
+
+				<span class="border">Popular Events</span>
+
+			</div>
+
+		</div>
+
+		<div class="container-fluid" style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+
+			<div class="col-sm-3">
+				<h3 style="text-align:center; font-size:19px;">Innovation Days</h3>
+
+				<p class="padding5 indent" style="text-align:left;">
+					These meetings are to help members go through different processes of creating ideas,
+					validating products with community members, and creating business plans.
+				</p>
+			</div>
+
+			<div class="col-sm-3">
+				<h3 style="text-align:center; font-size:19px;">Public Speakers</h3>
+
+				<p class="padding5 indent" style="text-align:left;">
+					Entrepreneurs and professionals working in business and marketing fields are invited
+					to share their knowledge with our members. So far we have brought in over 20 speakers
+					ranging from local entrepreneurs to international entrepreneurs worth 300 million dollars.
+				</p>
+			</div>
+
+			<div class="col-sm-3">
+				<h3 style="text-align:center; font-size:19px;">Pitch Days</h3>
+
+				<p class="padding5 indent" style="text-align:left;">
+					These days are dedicated to improving the pitching skills of our students. Students may
+					come prepared with business pitches or be given a topic with two minutes of preparation
+					prior to presenting.
+				</p>
+			</div>
+
+			<div class="col-sm-3">
+				<h3 style="text-align:center; font-size:19px;">Startup Weekend</h3>
+
+				<p class="padding5 indent" style="text-align:left;">
+					On a Friday night, you will eat and network with 50 other competitors followed
+					by 30-40 one minute business pitches from any member in the crowd. Ten teams will
+					form around and spend the next 54 hours building, validating, and executing a
+					business model prior to a pitch to investors.
+				</p>
+			</div>
+
+		</div>
+
+		<div id="calendar" class="container-fluid">
+
+			<div class="row">
+				<div class="calender" align='center' class="col-sm-12">
+					<iframe src="https://calendar.google.com/calendar/b/1/embed?title=Innovation%20Club%20for%20Entrepreneurs&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=icentrepreneurs%40mines.sdsmt.edu&amp;color=%231B887A&amp;ctz=America%2FDenver"
+					 style="border-width:0" width="1330" height="600" frameborder="0" scrolling="no"></iframe>
+				</div>
+			</div>
+		</div>
+
+		<div id="files" class="container text-center">
+			<h2 style="text-align:center; color:#383838;">USEFUL FILES</h2>
+
+				<li style="text-align:center; list-style:none;">
+					<a href="importantFiles/ICE Advertisment Trifold.pub">ICE Advertisement Trifold</a>
+				</li>
+
+				<li style="text-align:center; list-style:none;">
+					<a href="importantFiles/ICE Schedule Spring 2018.docx">Spring Schedule</a>
+				</li>
+		</div>
+	</div>
 
 </body>
+
 </html>
