@@ -247,6 +247,12 @@ a.article, a.article:hover {
     color: white;
 }
 
+.centered-top-right {
+    position: absolute;
+    top: 8px;;
+    right: 16px;
+}
+
 #content {
     padding: 20px;
     min-height: 100vh;
