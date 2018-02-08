@@ -60,6 +60,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="resume.pdf">
+                        <i class="glyphicon glyphicon-folder-open"></i>
+                        Download resume
+                    </a>
+                </li>
+                <li>
                     <a href="#contact">
                         <i class="glyphicon glyphicon-send"></i>
                         Contact
@@ -107,7 +113,7 @@
                 <!--style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%)"-->
                 <!--<img src="images/Narrows.jpg" alt="Hiking in the Narrows of Zion National Park" class="img-responsive" style="filter:brightness(70%)">-->
                 <div class="col-sm-6">
-                    <h1 style="text-align:left">Designing Software and Hardware that turns heads and Changes Minds.</h1>
+                    <h1 style="text-align:left">Designing Software and Hardware Solutions that Turns Heads and Changes Minds.</h1>
                     <p>A bunch of information about me and what I do.</p>
                 </div>
             
@@ -122,8 +128,30 @@
                 <p>About Section 3</p>
             </div>
 
-            <div id="contact">
-                <p>Contact Section.</p>
+            <div id="contact" class="container" style="color:black">
+                <h1 style="text-align:left">Contact Me</h1>
+
+                <form action="action_page.php">
+
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="usa">USA</option>
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                    </select>
+                  
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  
+                    <input type="submit" value="Submit">
+                  
+                </form>
             </div>
         </div>
     </div>
