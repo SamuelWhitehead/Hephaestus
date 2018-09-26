@@ -2,7 +2,7 @@
 
 if(!isset($_POST['submit']))
 {
-    echo "Error; you need to submit the form!"
+    echo "Error; you need to submit the form!";
 }
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
@@ -17,4 +17,3 @@ if(empty($fname) || empty($lname) || empty($visitor_email))
 }
 
 $email_from = 'samwhitehead26@gmail.com';
-$
